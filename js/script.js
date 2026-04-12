@@ -10,6 +10,7 @@ function renderTasks () {
 
     for (const task of tasks) {
         const item = document.createElement("li");
+        item.classList.add("task-item");
         item.textContent = task.title;
 
         list_.appendChild(item);
