@@ -1,0 +1,11 @@
+:root {
+  /* Paleta principal */
+  --color-primary-dark: #082a30;
+  --color-accent: #ff4c35;
+  --color-success: #09d17c;
+
+  /* Neutras de apoio */
+  --color-background: #f5f7f8;
+  --color-surface: #ffffff;
+  --color-text: #1b1f23;
+}
