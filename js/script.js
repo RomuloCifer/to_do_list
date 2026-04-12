@@ -11,10 +11,32 @@ function renderTasks () {
     for (const task of tasks) {
         const item = document.createElement("li");
         item.classList.add("task-item");
-        item.textContent = task.title;
 
+        const text = document.createElement("span");
+        text.classList.add("task-text");
+        text.textContent = task.title;
+
+        const removeButton = document.createElement("button");
+        removeButton.classList.add("delete-button");
+        removeButton.textContent = "Remover";
+
+        removeButton.addEventListener("click", function() {
+            removeTask(task.id);
+        })
+
+        item.appendChild(text)
+        item.appendChild(removeButton);
         list_.appendChild(item);
     }
+}
+
+function removeTask(idTask) {
+    const newTasks = tasks.filter(function (task) {
+        return task.id !==idTask; // Mantém toda a lista que o ID é diferente da task
+    });
+    tasks.length = 0; //zera o array antigo e...
+    tasks.push(...newTasks); // adiciona todas as tasks novamente.
+    renderTasks();
 }
 
 form.addEventListener("submit", function (event) {
