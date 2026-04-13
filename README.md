@@ -33,3 +33,10 @@ to_do_list/
 - Salvar tarefas mesmo apos recarregar a pagina
 - Melhorar detalhes visuais e responsividade
 - Adicionar filtros (todas, concluidas e pendentes)
+
+
+## Tecnologias usadas
+
+- **HTML5** — estrutura das paginas
+- **CSS3** — estilizacao e variaveis de design (`variables.css`)
+- **JavaScript** (Vanilla JS / ES6+) — logica de CRUD das tarefas
