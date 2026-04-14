@@ -17,17 +17,22 @@ function renderTasks () {
             editInput.classList.add("task-edit-input");
             editInput.value = task.title;
 
+            let canceleouEdicao = false;
+
             editInput.addEventListener("keydown", function(event) {
                 if (event.key === "Enter") {
                     saveEditTask(task.id, editInput.value);
                 }
                 if (event.key === "Escape") {
+                    canceleouEdicao = true;
                     task.editing = false;
                     renderTasks();
                 }
             })
             editInput.addEventListener("blur", function() {
+                if (!canceleouEdicao) {
                 saveEditTask(task.id, editInput.value);
+                }
             });
             item.appendChild(editInput);
             list_.appendChild(item);
